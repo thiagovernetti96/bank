@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_05_183933) do
+ActiveRecord::Schema.define(version: 2021_09_05_184634) do
 
   create_table "account_transactions", force: :cascade do |t|
     t.decimal "amount"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2021_09_05_183933) do
     t.integer "bank_account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "transaction"
+    t.string "number"
     t.index ["bank_account_id"], name: "index_account_transactions_on_bank_account_id"
   end
 
