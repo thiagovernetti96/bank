@@ -33,7 +33,7 @@ class BankAccountsController < ApplicationController
     def destroy 
         @bank_account = BankAccount.find(params[:id])
 
-        if @bank_account.balance > 0
+        if @bank_account.balance >= 0
             redirect_to bank_account_path(@bank_account.id)
         else
             @bank_account.destroy!
