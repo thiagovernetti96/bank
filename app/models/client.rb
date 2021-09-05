@@ -2,7 +2,7 @@ class Client < ApplicationRecord
     validates :name, presence: true
     validates :last_name, presence: true
     validates :client_number, presence: true, uniqueness: true
-
+    validates_associated :content
 
     has_many :bank_accounts
 
@@ -18,7 +18,7 @@ class Client < ApplicationRecord
     end
 
     def to_s
-        "#{first_name}  #{last_name}"
+        "#{name} #{last_name}"
     end
 
 end
